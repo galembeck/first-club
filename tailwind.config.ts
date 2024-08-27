@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss"
 
-const { fontFamily } = require("tailwindcss/defaultTheme")
-
-/** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
   content: [
@@ -21,9 +18,9 @@ const config = {
       },
     },
     extend: {
-      /** fontFamily: {
-        poppins: ["var(--font-poppins)", ...fontFamily.poppins],
-      }, */
+      fontFamily: {
+        poppins: ["var(--font-poppins)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
