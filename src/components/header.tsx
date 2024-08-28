@@ -1,8 +1,9 @@
-"use client";
-
 import React from "react";
 
 import Link from "next/link";
+import Image from "next/image";
+
+import { currentUser } from "@clerk/nextjs/server";
 
 import { cn } from "@/lib/utils"
 import {
@@ -14,55 +15,49 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 import beFirstImage from "@/assets/images/be-first.png";
-import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
-const components: { 
+const olympicClubs: { 
   title: string; 
   href: string; 
   description: string;
 }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Chess",
+    href: "/#olympic-clubs",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Where passion for chess meets the spirit of competition! A club dedicated to promoting the game of chess and fostering a community of players who strive for excellence. Whether you’re a seasoned grandmaster or a curious beginner, you’ll find a welcoming environment to hone your skills and enjoy the game.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Astronomy",
+    href: "/#olympic-clubs",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Olympics",
+    href: "/#olympic-clubs",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
 ]
 
-export function Header() {
+export async function Header() {
+  const user = await currentUser();
+
+
   return(
-    <header className="w-full h-auto flex items-center justify-between px-10 py-6 bg-gray-950">
+    <header className="w-full h-auto sticky flex items-center justify-between px-7 py-6 bg-gray-950">
       <div>
         <Link href="/">
           <Image src={beFirstImage} alt="Be #F1rst!" className="w-52" />
@@ -74,75 +69,86 @@ export function Header() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white`}>
-                  Home
-                </NavigationMenuLink>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white`}>
+                        Home
+                      </NavigationMenuLink>
+                      <TooltipContent>
+                        <p>Return to home</p>
+                      </TooltipContent>
+                    </TooltipTrigger>
+                  </Tooltip>
+                </TooltipProvider>
               </Link>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white`}>
-                  About us
-                </NavigationMenuLink>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white`}>
+                        About us
+                      </NavigationMenuLink>
+                      <TooltipContent>
+                        <p>Wnat to know more about us?</p>
+                      </TooltipContent>
+                    </TooltipTrigger>
+                  </Tooltip>
+                </TooltipProvider>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white">
-                Olympic clubs
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-
-
-
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white">
+              <NavigationMenuTrigger className="bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white data-[state=open]:bg-gray-950">
                 Olympic Clubs
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-gray-900 text-white">
-                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="/#olympic-clubs" title="Chess">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
-                  <ListItem href="/#olympic-clubs" title="Astronomy">
-                    How to install dependencies and structure your app.
-                  </ListItem>
-                  <ListItem href="/#olympic-clubs" title="Olympic(s)">
-                    Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
+                <ul className="grid w-[300px] gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] bg-[#110E19]">
+                  {olympicClubs.map((olympicClubs) => (
                     <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
+                      key={olympicClubs.title}
+                      title={olympicClubs.title}
+                      href={olympicClubs.href}
+                      className="text-white hover:text-white/70 bg-gray-950/70 focus:bg-gray-950/70"
                     >
-                      {component.description}
+                      {olympicClubs.description}
                     </ListItem>
                   ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+              <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-gray-950 text-white hover:bg-gray-950 hover:text-white/70 focus:bg-gray-950 focus:text-white`}>
+                        Olympic Calendar
+                      </NavigationMenuLink>
+                      <TooltipContent>
+                        <p>Check the olympic calendar of clubs</p>
+                      </TooltipContent>
+                    </TooltipTrigger>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+            </NavigationMenuItem>
+
+            <div>
+              {user ? (
+                <UserButton />
+              ) : (
+                <Button className="hover:bg-primary/70 hover:text-white/70" variant="default">
+                  <Link href="/sign-in">
+                    Login
+                  </Link>
+                </Button>
+              )}
+            </div>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
@@ -160,13 +166,15 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium leading-none">
+            {title}
+          </div>
+          <p className="line-clamp-4 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
