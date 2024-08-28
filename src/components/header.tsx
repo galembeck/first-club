@@ -22,7 +22,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
 
 import beFirstImage from "@/assets/images/be-first.png";
 import { UserButton } from "@clerk/nextjs";
