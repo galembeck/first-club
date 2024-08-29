@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 
 import { cn } from "@/lib/utils"
@@ -21,10 +22,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 import beFirstImage from "@/assets/images/be-first.png";
-import { UserButton } from "@clerk/nextjs";
 
 const olympicClubs: { 
   title: string; 
@@ -56,7 +56,7 @@ export async function Header() {
 
 
   return(
-    <header className="w-full h-auto sticky flex items-center justify-between px-7 py-6 bg-gray-950">
+    <header className="w-full h-auto flex items-center justify-between px-7 py-6 bg-gray-950">
       <div>
         <Link href="/">
           <Image src={beFirstImage} alt="Be #F1rst!" className="w-52" />
