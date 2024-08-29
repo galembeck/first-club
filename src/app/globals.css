@@ -3,6 +3,13 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+  .text-gradient {
+    background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
