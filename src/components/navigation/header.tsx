@@ -91,7 +91,7 @@ export async function Header() {
                         About us
                       </NavigationMenuLink>
                       <TooltipContent>
-                        <p>Wnat to know more about us?</p>
+                        <p>Want to know more about us?</p>
                       </TooltipContent>
                     </TooltipTrigger>
                   </Tooltip>
