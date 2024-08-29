@@ -1,5 +1,11 @@
+import { Intro } from "./components/intro";
+import { Calendar } from "./components/calendar";
+
 export default function HomePage() {
   return(
-    <h1>First Club</h1>
+    <main>
+      <Intro />
+      <Calendar />
+    </main>
   );
 }
