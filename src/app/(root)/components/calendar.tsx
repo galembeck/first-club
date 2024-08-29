@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 
 export function Calendar() {
   return(
-    <section id="olympic-calendar" className="flex flex-col items-center gap-5 scroll-mt-32 mb-20">
+    <section 
+      id="olympic-calendar" 
+      className="flex flex-col items-center gap-5 scroll-mt-32 mb-20"
+    >
       <h1 className="text-center text-2xl md:text-5xl font-extrabold">
         Choose your <span className="text-blue-900">Olympic Club</span>
         <br />
