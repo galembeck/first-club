@@ -20,6 +20,8 @@ const config = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        bungeeInline: ["var(--font-bungee-inline)"],
+        alfaSlabOne: ["var(--font-alfa-slab-one)"],
       },
       colors: {
         border: "hsl(var(--border))",
