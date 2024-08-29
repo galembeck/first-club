@@ -10,6 +10,30 @@
     -webkit-text-fill-color: transparent;
   }
 
+  .gradient-border {
+    position: relative;
+    background: #111827;
+    border-radius: 1rem;
+    padding: 20px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, #44088a 0%, #26068e 100%);
+    z-index: -1;
+    border-radius: 1rem;
+    padding: 5px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
