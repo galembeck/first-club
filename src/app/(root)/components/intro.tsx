@@ -1,5 +1,7 @@
 "use client";
 
+import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
@@ -10,7 +12,10 @@ import MedalIcon from '../../../assets/icons/medal.svg';
 
 export function Intro() {
   return(
-    <section id="Home" className="relative flex flex-col w-screen h-screen lg:h-[1000px] items-center justify-center gap-5 -mt-28">
+    <section 
+      id="home" 
+      className="relative flex flex-col w-screen h-screen lg:h-[1000px] items-center justify-center gap-5 -mt-56"
+    >
       <div className="bg-[#7063d7] absolute top-[22rem] -z-10 right-[48rem] h-[15rem] w-[15rem] rounded-full blur-[10rem] sm:w-[20rem] dark:bg-[#946263]" />
       <div className="bg-[#214b97] absolute top-[22rem] -z-10 right-[23rem] h-[15rem] w-[15rem] rounded-full blur-[10rem] sm:w-[20rem] dark:bg-[#676394]" />
       
@@ -39,7 +44,9 @@ export function Intro() {
       <div className="flex items-center gap-6 mt-4 md:mt-8">
         <motion.div initial={{ x: -200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
           <Button className="w-auto h-auto bg-white rounded-xl text-black font-bold px-4 py-2 text-xs md:text-sm hover:bg-white/70">
-            Become a firster
+            <Link href="/#olympic-clubs">
+              Become a firster
+            </Link>
           </Button>
         </motion.div>
         <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
