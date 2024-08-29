@@ -41,19 +41,18 @@ const olympicClubs: {
     title: "Astronomy",
     href: "/#olympic-clubs",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Explore the wonders of the universe! We prepare high school students for astronomy olympiads through engaging workshops, hands-on activities, and stargazing events. Be part of a community that celebrates scientific curiosity and excellence!",
   },
   {
     title: "Olympics",
     href: "/#olympic-clubs",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Challenge your intellect and expand your horizons! We prepare students for various academic competitions, offering expert guidance, engaging workshops, and a supportive community. Be part of a team that celebrates learning and strives for academic excellence!",
   },
 ]
 
 export async function Header() {
   const user = await currentUser();
-
 
   return(
     <header className="w-full h-auto flex items-center justify-between px-7 py-6 bg-gray-950">
@@ -67,7 +66,7 @@ export async function Header() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/#" passHref>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -84,7 +83,7 @@ export async function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
+              <Link href="/about" passHref>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -121,7 +120,7 @@ export async function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/#olympic-calendar" passHref>
               <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -141,11 +140,20 @@ export async function Header() {
               {user ? (
                 <UserButton />
               ) : (
-                <Button className="hover:bg-primary/70 hover:text-white/70" variant="default">
-                  <Link href="/sign-in">
-                    Login
-                  </Link>
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Button className="hover:bg-primary/70 hover:text-white/70" variant="default">
+                        <Link href="/sign-in">
+                          Login
+                        </Link>
+                      </Button>
+                      <TooltipContent>
+                        <p>Login to your account</p>
+                      </TooltipContent>
+                    </TooltipTrigger>
+                  </Tooltip>
+                </TooltipProvider>
               )}
             </div>
           </NavigationMenuList>
