@@ -7,7 +7,7 @@ type TestimonialCardProps = (typeof testimonials)[number];
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ icon, title, content }) => {
   return(
-    <div className="flex flex-col gap-4 w-11/12 max-w-96 rounded-xl bg-gray-900 p-5">
+    <div className="flex flex-col gap-4 w-11/12 max-w-96 rounded-xl bg-gray-900 p-5 mb-24">
       <div className="flex justify-between">
         <div className="flex flex-row gap-2">
           <Avatar>
