@@ -51,7 +51,9 @@ export function Intro() {
         </motion.div>
         <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
           <Button className="w-auto h-auto bg-gray-950 rounded-xl text-white font-bold px-4 py-[10px] text-xs md:text-sm hover:bg-gray-950/70">
-            Learn more
+            <Link href="/#testimonials" passHref>
+              Learn more
+            </Link>
           </Button>
         </motion.div>
       </div>
