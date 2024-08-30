@@ -1,6 +1,6 @@
 import { testimonials } from "@/lib/data"
 
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Info } from "lucide-react";
 
 type TestimonialCardProps = (typeof testimonials)[number];

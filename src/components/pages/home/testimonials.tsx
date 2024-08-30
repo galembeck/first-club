@@ -1,6 +1,6 @@
 import { testimonials } from "@/lib/data";
 
-import { TestimonialCard } from "@/components/testimonial-card";
+import { TestimonialCard } from "@/components/global/testimonial-card";
 
 export function Testimonials() {
   return(

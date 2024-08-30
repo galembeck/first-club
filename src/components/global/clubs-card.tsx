@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 import { clubsCardsData } from "@/lib/data"
 
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 
-import whiteCheckImage from "../assets/images/white-check.png";
-import coloredCheckImage from "../assets/images/colored-check.png";
+import whiteCheckImage from "../../assets/images/white-check.png";
+import coloredCheckImage from "../../assets/images/colored-check.png";
 
 type ClubsCardProps = (typeof clubsCardsData)[number] & {
   isMiddle?: number;

@@ -1,6 +1,7 @@
 "use client";
 
-import { ClubsCard } from "@/components/clubs-card";
+import { ClubsCard } from "@/components/global/clubs-card";
+
 import { clubsCardsData } from "@/lib/data";
 
 export function OlympicClubs() {
