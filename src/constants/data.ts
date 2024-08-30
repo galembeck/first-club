@@ -32,7 +32,7 @@ export const clubsCardsData = [
       "Access to Resources",
     ],
   },
-] as const;
+];
 
 export const testimonials = [
   {
@@ -53,4 +53,4 @@ export const testimonials = [
     content:
       "“Being part of the Olympics Club has been a game-changer for me. The quiz competitions are exciting and cover such a wide range of topics. The workshops and guest lectures have expanded my knowledge and inspired me to keep learning. The community is incredibly supportive, and I’ve made lifelong friends here. This club has truly enriched my intellectual life.”",
   },
-] as const;
+];

@@ -2,7 +2,7 @@
 
 import { ClubsCard } from "@/components/global/clubs-card";
 
-import { clubsCardsData } from "@/lib/data";
+import { clubsCardsData } from "@/constants/data";
 
 export function OlympicClubs() {
   return(

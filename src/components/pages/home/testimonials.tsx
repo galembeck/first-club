@@ -1,4 +1,4 @@
-import { testimonials } from "@/lib/data";
+import { testimonials } from "@/constants/data";
 
 import { TestimonialCard } from "@/components/global/testimonial-card";
 

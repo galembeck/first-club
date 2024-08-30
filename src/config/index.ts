@@ -10,8 +10,8 @@ export const SITE_CONFIG: Metadata = {
     icons: {
         icon: [
             {
-                url: "../app/favicon.ico",
-                href: "../app/favicon.ico",
+                url: "./app/favicon.ico",
+                href: "./app/favicon.ico",
             }
         ]
     },

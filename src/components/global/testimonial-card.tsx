@@ -1,4 +1,4 @@
-import { testimonials } from "@/lib/data"
+import { testimonials } from "@/constants/data"
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Info } from "lucide-react";
