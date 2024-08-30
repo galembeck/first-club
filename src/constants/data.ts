@@ -1,3 +1,7 @@
+import robotHandImage from "../assets/images/robot-hand.png";
+import questionMarkImage from "../assets/images/question-mark.png";
+import threePeopleImage from "../assets/images/three-people.png";
+
 export const clubsCardsData = [
   {
     title: "Chess",
@@ -52,5 +56,26 @@ export const testimonials = [
     title: "Murilo Henrique",
     content:
       "“Being part of the Olympics Club has been a game-changer for me. The quiz competitions are exciting and cover such a wide range of topics. The workshops and guest lectures have expanded my knowledge and inspired me to keep learning. The community is incredibly supportive, and I’ve made lifelong friends here. This club has truly enriched my intellectual life.”",
+  },
+];
+
+export const aboutTopics = [
+  {
+    title: "What is the #BeF1rst project?",
+    description: "Our project as an innovative initiative designed to foster intellectual growth and community engagement through a series of Olympic-style clubs. This project encompasses a variety of disciplines, including chess, astronomy, and general knowledge, providing a platform for enthusiasts and learners to excel and compete in their areas of interest.",
+    link: "Read more",
+    image: robotHandImage,
+  },
+  {
+    title: "How everything started?",
+    description: "The idea for #BeF1rst was born out of a shared passion for learning and community among a group of friends who frequently gathered to discuss their interests in chess, astronomy, and general knowledge. They noticed a lack of platforms that combined these intellectual pursuits in a competitive yet supportive environment. This realization sparked the vision for a project that could bring together like-minded individuals to learn, compete, and grow together.",
+    link: "Read more",
+    image: questionMarkImage,
+  },
+  {
+    title: "Where do want to get?",
+    description: "At #BeF1rst, our journey is just beginning. Our ultimate goal is to create a global community where intellectual pursuits are celebrated, and lifelong learning is a shared passion. We envision a future where #BeF1rst becomes a beacon for those who seek to challenge themselves, connect with others, and achieve excellence in their chosen disciplines.",
+    link: "Read more",
+    image: threePeopleImage,
   },
 ];

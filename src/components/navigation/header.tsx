@@ -83,7 +83,7 @@ export async function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" passHref>
+              <Link href="/#about" passHref>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
